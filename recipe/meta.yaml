@@ -1,4 +1,4 @@
-{% set version = "0.1.2" %}
+{% set version = "0.2.0" %}
 
 package:
   name: pandas-flavor
@@ -18,9 +18,11 @@ requirements:
     - python
     - pip
     - pandas
+    - xarray
   run:
     - python
     - pandas
+    - xarray
 
 test:
   imports:
@@ -36,3 +38,4 @@ about:
 extra:
   recipe-maintainers:
     - ocefpaf
+    - zsailer
