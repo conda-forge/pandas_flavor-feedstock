@@ -1,4 +1,4 @@
-{% set version = "0.2.0" %}
+{% set version = "0.3.0" %}
 
 package:
   name: pandas-flavor
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/p/pandas_flavor/pandas_flavor-{{ version }}.tar.gz
-  sha256: 7871655816de22dc766e916697ccc67449e1863c090ef5fd40d4d0fbd056e489
+  sha256: db5739481f5382b80cec3fd2905adeaaa0b03b8ed26912675b222a1d4a6672b5
 
 build:
   number: 0
@@ -31,6 +31,7 @@ test:
 about:
   home: https://github.com/Zsailer/pandas_flavor
   license: MIT
+  license_file: LICENSE
   license_family: MIT
   # license_file: ''  No license file
   summary: The easy way to write your own Pandas flavor
