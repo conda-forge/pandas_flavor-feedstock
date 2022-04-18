@@ -11,29 +11,31 @@ source:
 build:
   number: 0
   noarch: python
-  script: python -m pip install . --no-deps --ignore-installed
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
-    - python
+    - python >=3.6
     - pip
-    - pandas
-    - xarray
   run:
-    - python
-    - pandas
+    - python >=3.6
+    - lazy-loader ==0.1rc2
+    - pandas >=0.23
     - xarray
 
 test:
   imports:
     - pandas_flavor
+  commands:
+    - pip check
+  requires:
+    - pip
 
 about:
   home: https://github.com/Zsailer/pandas_flavor
   license: MIT
   license_file: LICENSE
   license_family: MIT
-  # license_file: ''  No license file
   summary: The easy way to write your own Pandas flavor
 
 extra:
