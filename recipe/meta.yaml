@@ -1,5 +1,5 @@
 {% set name = "pandas_flavor" %}
-{% set version = "0.5.0" %}
+{% set version = "0.6.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pandas_flavor-{{ version }}.tar.gz
-  sha256: a1ebb90512b4b2cb84e5b86b8d46fa2702eca9e45d17d30b1f4f69dbd6a4e310
+  sha256: 9fb8735102dcb65dae7ee5cda12b393ca134a909ebcfc0262c5cdc1d79ba007f
 
 build:
   noarch: python
