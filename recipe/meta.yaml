@@ -22,7 +22,6 @@ requirements:
     - python >=3.6
     - pandas >=0.23
     - xarray
-    - lazy_loader >=0.1
 
 test:
   imports:
