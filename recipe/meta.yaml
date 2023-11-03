@@ -1,35 +1,45 @@
-{% set name = "pandas_flavor" %}
 {% set version = "0.6.0" %}
 
 package:
-  name: {{ name|lower }}
+  name: pandas-flavor
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pandas_flavor-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/p/pandas_flavor/pandas_flavor-{{ version }}.tar.gz
   sha256: 9fb8735102dcb65dae7ee5cda12b393ca134a909ebcfc0262c5cdc1d79ba007f
 
 build:
+  number: 1
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vv
-  number: 0
 
-requirements:
-  host:
-    - python >=3.6
-    - pip
-  run:
-    - python >=3.6
-    - pandas >=0.23
-    - xarray
+outputs:
+  - name: pandas-flavor
+    script: build_base.sh
+    requirements:
+      host:
+        - python >=3.6
+        - pip
+      run:
+        - python >=3.6
+        - pandas >=0.23
+        - xarray
+    test:
+      imports:
+        - pandas_flavor
+      commands:
+        - pip check
+      requires:
+        - pip
 
-test:
-  imports:
-    - pandas_flavor
-  commands:
-    - pip check
-  requires:
-    - pip
+  - name: pandas_flavor
+    build:
+      noarch: generic
+    requirements:
+      run:
+        - {{ pin_subpackage('pandas-flavor', max_pin="x.x.x") }}
+    test:
+      imports:
+        - pandas_flavor
 
 about:
   home: https://github.com/Zsailer/pandas_flavor
