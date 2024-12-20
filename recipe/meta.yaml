@@ -5,11 +5,11 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/p/pandas_flavor/pandas_flavor-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/p/pandas_flavor/pandas_flavor-{{ version }}.tar.gz
   sha256: 9fb8735102dcb65dae7ee5cda12b393ca134a909ebcfc0262c5cdc1d79ba007f
 
 build:
-  number: 2
+  number: 3
   noarch: python
 
 outputs:
@@ -17,11 +17,11 @@ outputs:
     script: build_base.sh
     requirements:
       host:
-        - python >=3.6
+        - python {{ python_min }}
         - setuptools
         - pip
       run:
-        - python >=3.6
+        - python >={{ python_min }}
         - pandas >=0.23
         - xarray
     test:
