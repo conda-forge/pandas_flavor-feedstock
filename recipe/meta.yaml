@@ -1,4 +1,4 @@
-{% set version = "0.7.0" %}
+{% set version = "0.8.1" %}
 
 package:
   name: pandas-flavor
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/p/pandas_flavor/pandas_flavor-{{ version }}.tar.gz
-  sha256: 617bf9f96902017afc9bd284f611592bce91806d3c7ae34ad64f6edab3edaf7e
+  sha256: 255fa5851833ee0132c4fdd6c1565ec1e938a8c2671c37e408006da6b2bdc366
 
 build:
   number: 0
